@@ -1,32 +1,112 @@
-# MnTs Lowncare
+# 🌤️ Weather Dashboard
 
-Welcome to the MnTs Lowncare website repository!
+A beautiful, real-time weather dashboard that fetches data from the OpenWeatherMap API.
 
-## About
+## Features
 
-MnTs Lowncare is a professional lawn care service dedicated to keeping your outdoor spaces beautiful and well-maintained.
+✅ **Current Weather Display** - Real-time temperature, humidity, wind speed, and more
+✅ **5-Day Forecast** - Plan ahead with weather predictions
+✅ **City Search** - Search any city worldwide
+✅ **Geolocation** - Use your current location
+✅ **Responsive Design** - Works on desktop, tablet, and mobile
+✅ **Beautiful UI** - Modern glassmorphism design with smooth animations
+✅ **Weather Icons** - Emoji-based weather indicators
 
-## Services
+## Live Demo
 
-- **Lawn Mowing** - Regular grass maintenance
-- **Landscaping** - Design and installation
-- **Weed Control** - Prevention and removal
-- **Fertilization** - Custom lawn nutrition plans
+Deployed on Vercel: [Your Vercel URL]
 
-## Website
+## Setup Instructions
 
-Visit us at: [www.MnTslowncare.com](https://www.MnTslowncare.com)
+### 1. Get an API Key
+1. Go to [OpenWeatherMap](https://openweathermap.org/api)
+2. Sign up for a free account
+3. Go to your API keys section
+4. Copy your API key
 
-## Getting Started
+### 2. Add Your API Key
+Open `app.js` and replace:
+```javascript
+const API_KEY = 'YOUR_API_KEY_HERE';
+```
+With your actual API key.
 
-This repository contains the source code for our website hosted on GitHub Pages.
+### 3. Deploy on Vercel
 
-### Local Development
+#### Option A: Using Vercel CLI
+```bash
+npm install -g vercel
+vercel
+```
 
-To run this locally:
-1. Clone the repository
-2. Open `index.html` in your web browser
+#### Option B: Using GitHub Integration
+1. Push this branch to GitHub
+2. Go to [Vercel Dashboard](https://vercel.com)
+3. Click "Add New" → "Project"
+4. Select your GitHub repository
+5. Click "Deploy"
+
+#### Option C: Manual Upload
+1. Go to [Vercel](https://vercel.com/import)
+2. Import your GitHub repository
+3. Set environment variables if needed
+4. Deploy
+
+## File Structure
+
+```
+.
+├── index.html      # HTML structure
+├── styles.css      # Styling with glassmorphism
+├── app.js          # Weather API logic
+├── vercel.json     # Vercel configuration
+├── package.json    # Project metadata
+└── README.md       # This file
+```
+
+## Weather Information Displayed
+
+- **Current Temperature** - In Celsius
+- **Feels Like** - Wind chill adjustment
+- **Humidity** - Percentage
+- **Wind Speed** - Meters per second
+- **Pressure** - Hectopascals
+- **Cloud Cover** - Percentage
+- **Visibility** - Kilometers
+- **5-Day Forecast** - Daily forecasts with icons and temperatures
+
+## Technologies Used
+
+- **Frontend**: HTML5, CSS3, JavaScript (Vanilla)
+- **API**: OpenWeatherMap REST API
+- **Hosting**: Vercel
+- **Design**: Glassmorphism with CSS gradients and backdrop filters
+
+## API Reference
+
+Endpoints used:
+- `GET /weather` - Current weather by city or coordinates
+- `GET /forecast` - 5-day weather forecast
+
+## Browser Support
+
+✅ Chrome
+✅ Firefox
+✅ Safari
+✅ Edge
+✅ Mobile browsers
 
 ## License
 
-© 2026 MnTs Lowncare. All rights reserved.
+MIT License - Feel free to use this project for your own purposes.
+
+## Support
+
+For issues or questions, please check:
+- [OpenWeatherMap Documentation](https://openweathermap.org/api)
+- [Vercel Documentation](https://vercel.com/docs)
+- GitHub Issues
+
+---
+
+Made with ❤️ by mrGeoege

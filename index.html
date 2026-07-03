@@ -3,92 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MnTs Lowncare</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem;
-            text-align: center;
-        }
-        
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        section {
-            margin: 3rem 0;
-        }
-        
-        section h2 {
-            color: #667eea;
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-        }
-        
-        section p {
-            margin-bottom: 1rem;
-            line-height: 1.8;
-        }
-        
-        footer {
-            background: #f4f4f4;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-            color: #666;
-        }
-    </style>
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>MnTs Lowncare</h1>
-        <p>Welcome to our project</p>
-    </header>
-    
     <div class="container">
-        <section>
-            <h2>About</h2>
-            <p>This is the MnTs Lowncare project. Start building your site by editing this index.html file!</p>
-        </section>
-        
-        <section>
-            <h2>Getting Started</h2>
-            <p>You can customize this page by editing the <code>index.html</code> file in your repository.</p>
-        </section>
-        
-        <section>
-            <h2>Features</h2>
-            <p>Add your content, images, and features here to make your site unique!</p>
-        </section>
+        <header>
+            <h1>🌤️ Weather Dashboard</h1>
+            <p class="subtitle">Real-time weather information</p>
+        </header>
+
+        <div class="search-section">
+            <input 
+                type="text" 
+                id="cityInput" 
+                placeholder="Enter city name..." 
+                class="search-input"
+            >
+            <button id="searchBtn" class="search-btn">Search</button>
+            <button id="locationBtn" class="location-btn">📍 Use My Location</button>
+        </div>
+
+        <div id="loading" class="loading" style="display: none;">Loading...</div>
+        <div id="error" class="error" style="display: none;"></div>
+
+        <div id="weatherContainer" class="weather-container">
+            <div class="current-weather">
+                <div class="city-info">
+                    <h2 id="cityName"></h2>
+                    <p id="description"></p>
+                </div>
+                <div class="temperature-section">
+                    <div class="temperature" id="temperature"></div>
+                    <div class="weather-icon" id="weatherIcon"></div>
+                </div>
+            </div>
+
+            <div class="weather-details">
+                <div class="detail-card">
+                    <span class="label">Feels Like</span>
+                    <span class="value" id="feelsLike"></span>
+                </div>
+                <div class="detail-card">
+                    <span class="label">Humidity</span>
+                    <span class="value" id="humidity"></span>
+                </div>
+                <div class="detail-card">
+                    <span class="label">Wind Speed</span>
+                    <span class="value" id="windSpeed"></span>
+                </div>
+                <div class="detail-card">
+                    <span class="label">Pressure</span>
+                    <span class="value" id="pressure"></span>
+                </div>
+                <div class="detail-card">
+                    <span class="label">UV Index</span>
+                    <span class="value" id="uvIndex"></span>
+                </div>
+                <div class="detail-card">
+                    <span class="label">Visibility</span>
+                    <span class="value" id="visibility"></span>
+                </div>
+            </div>
+
+            <div class="forecast-section">
+                <h3>5-Day Forecast</h3>
+                <div class="forecast-container" id="forecastContainer"></div>
+            </div>
+        </div>
     </div>
-    
-    <footer>
-        <p>&copy; 2026 MnTs Lowncare. All rights reserved.</p>
-    </footer>
+
+    <script src="app.js"></script>
 </body>
 </html>
